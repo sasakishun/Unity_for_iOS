@@ -51,15 +51,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BackgroundController.cs" />
-     <Compile Include="Assets\BulletController.cs" />
      <Compile Include="Assets\GUI\JumpButton.cs" />
      <Compile Include="Assets\GUI\TitleButton.cs" />
-     <Compile Include="Assets\RockController.cs" />
-     <Compile Include="Assets\RocketController.cs" />
-     <Compile Include="Assets\rocketUnderCollision.cs" />
-     <Compile Include="Assets\RockGenerator.cs" />
-     <Compile Include="Assets\UIController.cs" />
+     <Compile Include="Assets\Scenes\BackgroundController.cs" />
+     <Compile Include="Assets\Script\BulletController.cs" />
+     <Compile Include="Assets\Script\EnemyBullutController.cs" />
+     <Compile Include="Assets\Script\EnemyController.cs" />
+     <Compile Include="Assets\Script\FixedJoystick.cs" />
+     <Compile Include="Assets\Script\RockController.cs" />
+     <Compile Include="Assets\Script\RocketController.cs" />
+     <Compile Include="Assets\Script\rocketUnderCollision.cs" />
+     <Compile Include="Assets\Script\RockGenerator.cs" />
+     <Compile Include="Assets\Script\UIController.cs" />
+     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Base\Joystick.cs" />
+     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+     <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/xeno/Documents/Unity_for_iOS/TwoDimensionGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
