@@ -55,6 +55,7 @@
      <Compile Include="Assets\GUI\TitleButton.cs" />
      <Compile Include="Assets\Scenes\BackgroundController.cs" />
      <Compile Include="Assets\Script\BulletController.cs" />
+     <Compile Include="Assets\Script\cameraScript.cs" />
      <Compile Include="Assets\Script\EnemyBullutController.cs" />
      <Compile Include="Assets\Script\EnemyController.cs" />
      <Compile Include="Assets\Script\FixedJoystick.cs" />

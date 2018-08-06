@@ -13,45 +13,65 @@ public class RocketController : MonoBehaviour {
     public GameObject bulletPrefab;
     public float joystickPower = 0.01f;
     private RectTransform joyStickHandlePos;
-    private bool touched = false;
+    //private bool touched = false;
     private Vector2 pivot = Vector2.zero;
     JumpButton jumpScript;
+    //タッチエフェクト用変数
+    public GameObject particleObject;
+    //ParticleSystem tapEffect;
+    //public Camera _camera; // = GameObject.Find("MainCamera").GetComponent<Camera>();
 
     // Use this for initialization
     void Start () {
         joyStickHandlePos = GameObject.Find("Handle").GetComponent<RectTransform>();
         jumpScript = GameObject.Find("Jump").GetComponent<JumpButton>();
+        //tapEffect = particleObject.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
     void Update () {
+        //jumpしてない場合はjoystickからの操作を受け付ける
         if (!jumpScript.jumping)
         {
             this.GetComponent<Rigidbody2D>().velocity
             = new Vector2(joystickPower * joyStickHandlePos.localPosition.x, this.GetComponent<Rigidbody2D>().velocity.y);
         }
-    #if UNITY_EDITOR
+#if UNITY_EDITOR
         if (EventSystem.current.IsPointerOverGameObject())
         {
             Debug.Log("Unity Editor called.");
             return;
         }
-    #else 
+#else
         if (EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
             return;
         }
-    #endif
-        //ジョイスティックを使うようになったので、タッチ位置に追従するメソッドは封印
-        //if (Input.touchCount > 0)
-        //{
-            //Touch touch = Input.GetTouch(0);
-            // touchを基にタッチ位置に向かって移動する処理をMoveで行う
-            //Move(touch);
-        //}
+#endif
+        /*
+        //タッチ位置にエフェクト表示(うまく表示されないので保留0807)
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("ParticleStart");
+            // マウスのワールド座標までパーティクルを移動し、パーティクルエフェクトを1つ生成する
+            var pos = _camera.ScreenToWorldPoint(Input.mousePosition + _camera.transform.forward * 5);
+            tapEffect.transform.position = pos;
+            tapEffect.Emit(1);
+            Debug.Log(pos);
+            Debug.Log("ParticleEnd");
+        }
+        タッチ位置にエフェクト表示*/
+
+        /*ジョイスティックを使うようになったので、タッチ位置に追従するメソッドは封印
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            touchを基にタッチ位置に向かって移動する処理をMoveで行う
+            Move(touch);
+        }
         else
         {
             this.touched = false;
-        }
+        }*/
 
         //Keybourd input
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -82,7 +102,6 @@ public class RocketController : MonoBehaviour {
             targetVector.y += transform.position.y;
             targetVector.z = 0f;
             Instantiate(bulletPrefab, targetVector, rot);
-
             Debug.Log("bullet instatiated");
             //Instantiate(bulletPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
         }
