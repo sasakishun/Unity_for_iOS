@@ -14,8 +14,8 @@
 	- OnTriggerEnter()を使用するには、動く方の物体のColliderのisTriggerにチェックを入れなくてはならない。
 	- GUIを使うにはGameObjectでUI->EventSystemを追加しなくてはならない
 (Hierarchyにただ追加するだけで後は自動で処理してくれる)
-	- Rigidbody2Dのistriggerにチェックを入れると、衝突判定はするが、する抜けるようになる。
+	-Rigidbody2Dのistriggerにチェックを入れると、衝突判定はするが、する抜けるようになる。
 文字通り衝突イベント発生トリガーになるということ。
-	- UIとタップ位置がずれてしまう問題がある時は、Canbas ScalarのReference Scalarの値が
+	-UIとタップ位置がずれてしまう問題がある時は、Canbas ScalarのReference Scalarの値が
 Gameで指定したものから、ずれている可能性がある。一致させると直る。-->Joustickも問題なく動くようになった。
 	- マテリアルの作り方（https://book.mynavi.jp/manatee/detail/id=59718）
