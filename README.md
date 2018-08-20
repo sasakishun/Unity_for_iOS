@@ -19,3 +19,6 @@
 	-UIとタップ位置がずれてしまう問題がある時は、Canbas ScalarのReference Scalarの値が
 Gameで指定したものから、ずれている可能性がある。一致させると直る。-->Joustickも問題なく動くようになった。
 	- マテリアルの作り方（https://book.mynavi.jp/manatee/detail/id=59718）
+	- Animationの作り方（https://qiita.com/SatoruNoda/items/8a52d656f95ff38c0d26）
+	- Awake()とStart()の違い->Awakeの方が先に実行される、値の取得にはStart()を使うべき
+	- uGUIのすぐできる工夫（http://chungames.hateblo.jp/entry/2015/11/14/193547）:拡大、点滅
