@@ -30,7 +30,7 @@ public class BulletController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll)
     {
         // 衝突したときにスコアを更新する
-        GameObject.Find("Canvas").GetComponent<UIController>().AddScore();
+        GameObject.Find("Canvas").GetComponent<ScoreController>().AddScore();
 
         if (coll.gameObject.tag != "Player" && coll.gameObject.tag != "Ground")
         {

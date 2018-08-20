@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoDimensionGame", "Assembly-CSharp.csproj", "{BD6E5FCB-074A-33C0-6D83-E04BB9A0B0A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoDimensionGame", "Assembly-CSharp-Editor.csproj", "{D8B38BA5-7DFD-1A89-83D8-F7D7A768DAC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{BD6E5FCB-074A-33C0-6D83-E04BB9A0B0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD6E5FCB-074A-33C0-6D83-E04BB9A0B0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD6E5FCB-074A-33C0-6D83-E04BB9A0B0A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B38BA5-7DFD-1A89-83D8-F7D7A768DAC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B38BA5-7DFD-1A89-83D8-F7D7A768DAC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B38BA5-7DFD-1A89-83D8-F7D7A768DAC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B38BA5-7DFD-1A89-83D8-F7D7A768DAC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

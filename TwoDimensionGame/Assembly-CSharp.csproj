@@ -51,6 +51,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\GUI\BeamButton.cs" />
+     <Compile Include="Assets\GUI\BeamJoyStick.cs" />
      <Compile Include="Assets\GUI\JumpButton.cs" />
      <Compile Include="Assets\GUI\TitleButton.cs" />
      <Compile Include="Assets\Scenes\BackgroundController.cs" />
@@ -63,10 +65,16 @@
      <Compile Include="Assets\Script\RocketController.cs" />
      <Compile Include="Assets\Script\rocketUnderCollision.cs" />
      <Compile Include="Assets\Script\RockGenerator.cs" />
-     <Compile Include="Assets\Script\UIController.cs" />
+     <Compile Include="Assets\Script\ScoreController.cs" />
+     <Compile Include="Assets\UIController\Examples\CSS\Square.cs" />
+     <Compile Include="Assets\UIController\Examples\Popups\Scripts\UIControllerExample.cs" />
+     <Compile Include="Assets\UIController\Examples\Popups\Scripts\UIControllerExample8.cs" />
+     <Compile Include="Assets\UIController\Scripts\UIController.cs" />
+     <Compile Include="Assets\UIController\Scripts\UIControllerStateMachine.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Scripts\Base\Joystick.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
      <Compile Include="Assets\Virtual Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+     <None Include="Assets\UIController\ReleaseNote.txt" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/xeno/Documents/Unity_for_iOS/TwoDimensionGame/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>

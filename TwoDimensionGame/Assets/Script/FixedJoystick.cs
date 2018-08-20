@@ -6,6 +6,7 @@ public class FixedJoystick : Joystick
     Vector2 joystickPosition = Vector2.zero;
     private Camera cam = new Camera();
     private RocketController rocketScript;
+    public JumpButton jumpScript;
 
     void Start()
     {
@@ -14,6 +15,7 @@ public class FixedJoystick : Joystick
         //Debug.Log(joystickPosition);
         rocketScript = GameObject.Find("rocket").GetComponent<RocketController>();
         rocketScript.setPivot(joystickPosition);
+        jumpScript = GameObject.Find("Jump").GetComponent<JumpButton>();
     }
 
     public override void OnDrag(PointerEventData eventData)
@@ -29,8 +31,6 @@ public class FixedJoystick : Joystick
     {
         OnDrag(eventData);
     }
-
-    JumpButton jumpScript = GameObject.Find("Jump").GetComponent<JumpButton>();
 
     public override void OnPointerUp(PointerEventData eventData)
     {

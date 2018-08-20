@@ -20,7 +20,8 @@ public class RocketController : MonoBehaviour {
     public GameObject particleObject;
     //ParticleSystem tapEffect;
     //public Camera _camera; // = GameObject.Find("MainCamera").GetComponent<Camera>();
-
+    //public bool beamFlag = false;
+    public GameObject BeamUI;
     // Use this for initialization
     void Start () {
         joyStickHandlePos = GameObject.Find("Handle").GetComponent<RectTransform>();
@@ -89,25 +90,31 @@ public class RocketController : MonoBehaviour {
         //マウスでクリックした方向にビームを発射する
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = 0f;
-            Vector3 objPos = Camera.main.ScreenToWorldPoint(mousePos);
-            Quaternion rot = LookRotation2D(new Vector2 (0, 1), objPos- transform.position);
-            //ロケットの中心からビームを発射
-            //Instantiate(bulletPrefab, transform.position, rot);
-
-            //ロケットを中心とする半径1の円上から発射
-            Vector3 targetVector = 1f * (objPos - transform.position).normalized;
-            targetVector.x += transform.position.x;
-            targetVector.y += transform.position.y;
-            targetVector.z = 0f;
-            Instantiate(bulletPrefab, targetVector, rot);
-            Debug.Log("bullet instatiated");
-            //Instantiate(bulletPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+            beamLaunch(Input.mousePosition);
         }
         //Debug.Log(joyStickHandlePos.localPosition);
     }
 
+    public void beamLaunch(Vector3 mousePos)
+    {
+        mousePos = Input.mousePosition;
+        mousePos.z = 0f;
+        Vector3 objPos = Camera.main.ScreenToWorldPoint(mousePos);
+        Quaternion rot = LookRotation2D(new Vector2(0, 1), objPos - transform.position);
+        //ロケットの中心からビームを発射
+        //Instantiate(bulletPrefab, transform.position, rot);
+
+        //ロケットを中心とする半径1の円上から発射
+        Vector3 targetVector = 3f * (objPos - transform.position).normalized;
+        targetVector.x += transform.position.x;
+        targetVector.y += transform.position.y;
+        targetVector.z = 0f;
+        Instantiate(bulletPrefab, targetVector, rot);
+        Debug.Log("bullet instatiated");
+        //Instantiate(bulletPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+        //beamFlag = false;
+        //BeamUI.SetActive(false);
+    }
     void Move(Touch touch)
     {
         Vector3 target = touch.position;
