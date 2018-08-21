@@ -11,13 +11,13 @@
 	- 衝突させたいオブジェクトの両方にrigidbodyとcolliderを持たせる。
 	- 動かしたくないオブジェクトは、rigidbodyのBody typeをstaticにすればよい。
 	- OnCollisionEnter()はオブジェクト同士がぶつかるが、OnTriggerEnter()は通り抜ける。
-	- OnTriggerEnter()を使用するには、動く方の物体のColliderのisTriggerにチェックを入れなくてはならない。
-	- GUIを使うにはGameObjectでUI->EventSystemを追加しなくてはならない
-(Hierarchyにただ追加するだけで後は自動で処理してくれる)
-	-Rigidbody2Dのistriggerにチェックを入れると、衝突判定はするが、する抜けるようになる。
-文字通り衝突イベント発生トリガーになるということ。
--UIとタップ位置がずれてしまう問題がある時は、Canbas ScalarのReference Scalarの値が
-Gameで指定したものから、ずれている可能性がある。一致させると直る。-->Joustickも問題なく動くようになった。
+	- OnTriggerEnter()を使用するには、"衝突されたくない物体"のColliderのisTriggerにチェックを入れなくてはならない。
+		- これにより特定箇所を通過したかどうかの判定などができる。
+	- GUIを使うにはGameObjectでUI->EventSystemを追加しなくてはならない(Hierarchyにただ追加するだけで後は自動で処理してくれる)
+	- Rigidbody2Dのistriggerにチェックを入れると、衝突判定はするが、する抜けるようになる。
+		- 文字通り衝突イベント発生トリガーになるということ。
+- UIとタップ位置がずれてしまう問題がある時は、Canbas ScalarのReference Scalarの値が、Gameで指定したものから、ずれている可能性がある。一致させると直る。
+	- ->Joustickも問題なく動くようになった。
 - マテリアルの作り方（https://book.mynavi.jp/manatee/detail/id=59718）
 - Animationの作り方（https://qiita.com/SatoruNoda/items/8a52d656f95ff38c0d26）
 - Awake()とStart()の違い->Awakeの方が先に実行される、値の取得にはStart()を使うべき
