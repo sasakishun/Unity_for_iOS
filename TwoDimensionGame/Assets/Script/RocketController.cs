@@ -95,6 +95,7 @@ public class RocketController : MonoBehaviour {
         //Debug.Log(joyStickHandlePos.localPosition);
     }
 
+    //mousePosに向かってビームを発射する
     public void beamLaunch(Vector3 mousePos)
     {
         mousePos = Input.mousePosition;
@@ -115,6 +116,25 @@ public class RocketController : MonoBehaviour {
         //beamFlag = false;
         //BeamUI.SetActive(false);
     }
+
+    public void beamLaunchbyJoystick(Vector3 objPos)
+    {
+        Quaternion rot = LookRotation2D(new Vector2(0, 1), objPos - transform.position);
+        //ロケットの中心からビームを発射
+        //Instantiate(bulletPrefab, transform.position, rot);
+
+        //ロケットを中心とする半径1の円上から発射
+        Vector3 targetVector = 3f * (objPos - transform.position).normalized;
+        targetVector.x += transform.position.x;
+        targetVector.y += transform.position.y;
+        targetVector.z = 0f;
+        Instantiate(bulletPrefab, targetVector, rot);
+        Debug.Log("bullet instatiated");
+        //Instantiate(bulletPrefab, transform.position + new Vector3(0, 3, 0), Quaternion.identity);
+        //beamFlag = false;
+        //BeamUI.SetActive(false);
+    }
+
     void Move(Touch touch)
     {
         Vector3 target = touch.position;
