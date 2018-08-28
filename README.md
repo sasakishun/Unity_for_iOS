@@ -26,3 +26,6 @@
 
 - 便利サイト
 	- しずおかアプリ部（https://qiita.com/monolizm/items/3e4a92b1024b1a290af0）
+
+## git使用の注意点
+- gitignoreをちゃんと設定しないと、conflictが生じる。
